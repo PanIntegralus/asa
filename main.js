@@ -1,4 +1,4 @@
-const config = require('./config.json');
+var config = require('./config.json');
 
 const axios = require('axios').default
 const cheerio = require('cheerio')
