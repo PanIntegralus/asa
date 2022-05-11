@@ -1,11 +1,7 @@
-const request = require('request')
 const axios = require('axios').default
 const cheerio = require('cheerio')
 
-const puppeteer = require('puppeteer')
-
 const express = require('express')
-const cors = require('cors')
 const app = express()
 const port = 5555
 
