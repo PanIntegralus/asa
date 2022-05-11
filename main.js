@@ -7,12 +7,6 @@ const express = require('express')
 const app = express()
 const port = config.server.port
 
-app.get('/api', (req, res) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.json({saludo:["negro bailando"]});
-});
-
-
 // sitios que se pueden scrapear
 var availableSites = config.available_services;
 
@@ -55,7 +49,13 @@ app.get('/api/scrap/:site?/:input?', (req, res) => {
                     .catch (function (error) {console.log(error)});
     
                 case "animeflv":
-                    url = "https://www3.animeflv.net/browse?q=";
+                    url = "https://www3.animeflv.net/browse?q="+req.params.input;
+
+                    axios.get(url)
+                    .then (function (response) {
+                        var body = response.data
+                        console.log(body);
+                    })
                 
                 default:
                     break;
