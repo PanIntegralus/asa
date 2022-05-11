@@ -61,5 +61,5 @@ app.get('/api/scrap/:site/:input', (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Running app listening on port ${port}.`)
+    console.log(`Running app listening on port ${port}.`);
 });
