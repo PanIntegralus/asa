@@ -52,11 +52,15 @@ app.get('/api/scrap/:site?/:input?', (req, res) => {
                 case "animeflv":
                     url = "https://www3.animeflv.net/browse?q="+req.params.input;
 
-                    axios.get(url)
+                    axios.get(url, {
+                        "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+                        "User-Agent": "Mozilla/5.0",
+                    })
                     .then (function (response) {
                         var body = response.data
                         console.log(body);
                     })
+                    .catch (function (error) {console.log(error)});
                 
                 default:
                     break;
