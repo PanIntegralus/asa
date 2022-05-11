@@ -47,6 +47,7 @@ app.get('/api/scrap/:site?/:input?', (req, res) => {
                             res.json({animelist});
                     })
                     .catch (function (error) {console.log(error)});
+                    break;
     
                 case "animeflv":
                     url = "https://www3.animeflv.net/browse?q="+req.params.input;
