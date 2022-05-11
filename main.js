@@ -23,9 +23,9 @@ app.get('/api/scrap/:site/:input', (req, res) => {
         var url;
         switch (req.params.site) {
             case "monoschinos2":
-                url = "https://www.monoschinos.com/";
+                url = "https://monoschinos2.com/buscar?q="+req.params.input;
 
-                axios.get(url+req.params.input)
+                axios.get(url)
                 .then (function (response) {
                     var body = response.data
                     // console.log(body)
