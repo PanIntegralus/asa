@@ -1,9 +1,11 @@
+const config = require('./config.json');
+
 const axios = require('axios').default
 const cheerio = require('cheerio')
 
 const express = require('express')
 const app = express()
-const port = 5555
+const port = config.server.port
 
 app.get('/api', (req, res) => {
     res.header('Access-Control-Allow-Origin', '*');
@@ -12,10 +14,7 @@ app.get('/api', (req, res) => {
 
 
 // sitios que se pueden scrapear
-var availableSites = [
-    "monoschinos2"
-    // "animeflv"
-]
+var availableSites = config.available_services;
 
 app.get('/api/scrap/:site/:input', (req, res) => {
     res.header('Access-Control-Allow-Origin', '*');
