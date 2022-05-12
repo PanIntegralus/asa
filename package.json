@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
+  "test": "node test.js",
   "scripts": {
-    "text": "node test.js",
     "serve": "node main.js",
     "dev": "supervisor  main.js"
   },
