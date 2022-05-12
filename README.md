@@ -16,7 +16,7 @@ npm install asa-api --save
 ---
 ## Example
 ```js
-const asa = require('./main');
+const asa = require('asa-api');
 asa.getAnime("animeflv", "86")
     .then(res => console.log(res))
 ```
