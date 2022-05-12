@@ -5,6 +5,7 @@
   "main": "main.js",
   "test": "node test.js",
   "scripts": {
+    "test": "node test.js",
     "serve": "node main.js",
     "dev": "supervisor  main.js"
   },

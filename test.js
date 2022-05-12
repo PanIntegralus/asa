@@ -1,3 +1,3 @@
 const asa = require('./main');
-asa.getAnime("animeflv", "kami")
+asa.getAnime("animeflv", "86")
     .then(res => console.log(res))
