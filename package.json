@@ -3,10 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
-  "test": "node test.js",
   "scripts": {
-    "start": "node test.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node main.js",
+    "test": "node test.js",
     "serve": "node main.js",
     "dev": "supervisor  main.js"
   },
