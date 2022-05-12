@@ -10,15 +10,9 @@
   "author": "PanIntegralus",
   "license": "MIT",
   "dependencies": {
-    "@microlink/mql": "^0.10.20",
-    "2captcha": "^3.0.4",
     "axios": "^0.27.2",
     "cheerio": "^1.0.0-rc.10",
-    "cloudscraper-version.two": "^0.0.17",
     "express": "^4.18.1",
-    "puppeteer": "^14.0.0",
-    "supervisor": "^0.12.0",
-    "website-scraper": "^5.0.0",
-    "website-scraper-puppeteer": "^1.0.0"
+    "supervisor": "^0.12.0"
   }
 }
