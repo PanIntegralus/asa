@@ -1,5 +1,6 @@
-# asa
- ASA (Anime Scraper API) is an API to scrap information from anime websites. This was made for another project, but now is entirely separated. However, **is not meant to use in production**. It was made just for fun.
+# asa ![GitHub package.json version](https://img.shields.io/github/package-json/v/panintegralus/asa) ![npm](https://img.shields.io/npm/v/asa-api) ![NPM](https://img.shields.io/npm/l/asa-api) ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/PanIntegralus/asa) ![GitHub last commit](https://img.shields.io/github/last-commit/PanIntegralus/asa) ![GitHub issues](https://img.shields.io/github/issues/panintegralus/asa) ![GitHub Hits](https://hits.deltapapa.io/github/panintegralus/asa.svg)
+
+ASA (Anime Scraper API) is an API to scrap information from anime websites. This was made for another project, but now is entirely separated. However, **is not meant to use in production**. It was made just for fun.
 
 - [Installation](#installation)
 - [Example](#example)
