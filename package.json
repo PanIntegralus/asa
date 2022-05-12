@@ -4,6 +4,7 @@
   "description": "",
   "main": "main.js",
   "scripts": {
+    "text": "node test.js",
     "serve": "node main.js",
     "dev": "supervisor  main.js"
   },
