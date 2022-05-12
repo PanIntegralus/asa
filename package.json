@@ -16,6 +16,9 @@
     "cheerio": "^1.0.0-rc.10",
     "express": "^4.18.1",
     "fs": "^0.0.1-security",
+    "glob": "^8.0.1",
+    "import-modules": "^3.1.0",
+    "path": "^0.12.7",
     "supervisor": "^0.12.0"
   },
   "homepage": "https://github.com/PanIntegralus/asa",
