@@ -1,8 +1,4 @@
-{
-    "server": {
-        "port": 5555
-    },
-    
+{    
     "available_services": [
         "monoschinos2",
         "animeflv"
