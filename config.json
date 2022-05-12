@@ -4,6 +4,7 @@
     },
     
     "available_services": [
-        "monoschinos2"
+        "monoschinos2",
+        "animeflv"
     ]
 }
