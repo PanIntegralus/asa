@@ -6,7 +6,7 @@
   "test": "node test.js",
   "scripts": {
     "start": "node test.js",
-    "test": "node test.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "node main.js",
     "dev": "supervisor  main.js"
   },
