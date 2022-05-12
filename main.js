@@ -7,8 +7,6 @@ const express = require('express');
 const app = express();
 const port = config.server.port;
 
-const cloudscraper = require('cloudscraper-version.two');
-
 // sitios que se pueden scrapear
 var availableSites = config.available_services;
 
