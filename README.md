@@ -1,8 +1,41 @@
 # asa
  ASA (Anime Scraper API) is an API to scrap information from anime websites. This was made for another project, but now is entirely separated. However, **is not meant to use in production**. It was made just for fun.
 
+- [Installation](#installation)
+- [Example](#example)
+- [Sites supported](#sites-supported)
+
 # THIS IS UNDER HEAVY DEVELOPMENT, DON'T USE THIS IN PRODUCTION
-This means that **breaking changes will be made**, and you'll probably need to change stuff.
+### This means that **breaking changes will be made**, and you'll probably need to change stuff.
+
+## Installation
+```
+npm install asa-api --save
+```
+
+---
+## Example
+```js
+const asa = require('./main');
+asa.getAnime("animeflv", "86")
+    .then(res => console.log(res))
+```
+Output should be something similar to this:
+```json
+[
+  {
+    title: '86 - Eighty Six',
+    url: 'https://ww3.animeflv.cc/anime/86-eighty-six',
+    img: 'https://img.animeflv.cc/cover/86-eighty-six.jpg'
+  },
+  {
+    title: '86 2nd Season',
+    url: 'https://ww3.animeflv.cc/anime/86-2nd-season',
+    img: 'https://img.animeflv.cc/cover/86-2nd-season.jpg'
+  }
+]
+```
+
 
 ## Sites supported
 
