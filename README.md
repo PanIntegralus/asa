@@ -9,7 +9,7 @@ This means that **breaking changes will be made**, and you'll probably need to c
 ### Español 🇪🇸
 | Name | URL | Status | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| MonosChinos | https://monoschinos2.com/ | ✔ Working | |
+| MonosChinos | https://monoschinos2.com/ | ✔ Working | Limited to 31 results per request. |
 | AnimeFLV | https://ww3.animeflv.cc/ | ✔ Working | There's another URL for this site: https://www3.animeflv.net/. I'm not sure if the one used right now is official, but it's the only one I got working. |
 | JKAnime | https://jkanime.net/ | 🔘 Planned | |
 | VerAnime.org | https://www.veranime.org/ | 🔘 Planned | |
