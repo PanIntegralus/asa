@@ -7,7 +7,7 @@ ASA (Anime Scraper API) is an API to scrap information from anime websites. This
 ---
 
 - [Installation](#installation)
-- [Example](#example)
+- [Examples](#examples)
 - [Sites supported](#sites-supported)
 
 ## Installation
@@ -16,14 +16,21 @@ npm install asa-api --save
 ```
 
 ---
-## Example
+## Examples
+
+List all available sources and functions
+```js
+const asa = require('asa-api');
+console.log(asa.availableSources());
+```
+
+Search for anime and get results
 ```js
 const asa = require('asa-api');
 asa.getAnime("animeflv", "86")
-    .then(res => console.log(res))
-```
-Output should be something similar to this:
-```json
+    .then(res => console.log(res));
+
+/*
 [
   {
     title: '86 - Eighty Six',
@@ -36,7 +43,30 @@ Output should be something similar to this:
     img: 'https://img.animeflv.cc/cover/86-2nd-season.jpg'
   }
 ]
+*/
 ```
+
+Get anime episodes
+```js
+const asa = require('asa-api');
+asa.getAnime("monoschinos2", "serial experiments").then(res => {
+    asa.getEpisodes("monoschinos2", res[0].url).then(res => {
+        console.log(res)
+    });
+});
+
+/*
+  {
+    url: 'https://monoschinos2.com/ver/serial-experiments-lain-latino-episodio-1'
+  },
+  {
+    url: 'https://monoschinos2.com/ver/serial-experiments-lain-latino-episodio-2'
+  }, ...
+*/
+```
+
+
+
 
 
 ## Sites supported
