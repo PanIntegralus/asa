@@ -15,7 +15,8 @@ ASA (Anime Scraper API) is an API to scrap information from anime websites. This
 npm install asa-api --save
 ```
 
----
+
+
 ## Examples
 
 List all available sources and functions
