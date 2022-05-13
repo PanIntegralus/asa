@@ -1,10 +1,10 @@
 const axios = require('axios');
 const cheerio = require('cheerio').default;
 
-module.exports = async function (inputsearch) {
-    var srcurl = "https://monoschinos2.com/buscar?q="+inputsearch;
+var srcurl = "https://monoschinos2.com";
 
-    var body = await axios.get(srcurl)
+module.exports.getAnime = async function (inputsearch) {
+    var body = await axios.get(srcurl+"/buscar?q="+inputsearch)
     .then (function (response) {
         return response.data;
     }) .catch (function (error) {console.log(error)});
@@ -26,4 +26,24 @@ module.exports = async function (inputsearch) {
         animelist.push(index);
     });
     return animelist;
+}
+
+module.exports.getEpisodes = async function (animeURL) {
+    var body = await axios.get(animeURL)
+    .then (function (response) {
+        return response.data;
+    }) .catch (function (error) {console.log(error)});
+
+    var $ = cheerio.load(body);
+    
+    var episodeList = []
+    $('div.col-item a').each(function (index) {
+        url = $(this).attr('href');
+        var index = {
+            "url": url
+        };
+        episodeList.push(index);
+    });
+
+    return episodeList;
 }
