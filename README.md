@@ -5,17 +5,20 @@ ASA (Anime Scraper API) is an API to scrap information from anime websites. This
 ## THIS IS UNDER HEAVY DEVELOPMENT, DON'T USE THIS IN PRODUCTION
 ### This means that **breaking changes will be made**, and you'll probably need to change stuff.
 ---
-
+- [Features](#features)
 - [Installation](#installation)
 - [Examples](#examples)
 - [Sites supported](#sites-supported)
+
+## Features
+- [x] Retrieve any relevant information, like anime name, episodes, and streaming services.
+- [x] Support for multiple sites.
+- [x] Fast responses thanks to [cheerio](https://www.npmjs.com/package/cheerio).
 
 ## Installation
 ```
 npm install asa-api --save
 ```
-
-
 
 ## Examples
 
@@ -66,6 +69,28 @@ asa.getAnime("monoschinos2", "serial experiments").then(res => {
 */
 ```
 
+Get streaming services from episode
+```js
+const asa = require('asa-api');
+asa.getAnime("animeflv", "serial experiments").then(res => {
+    asa.getEpisodes("animeflv", res[0].url).then(res => {
+        asa.getStreaming("animeflv", res[0].url).then(res => {
+            console.log(res)
+        });
+    });
+});
+/*
+  {
+    servicename: 'Streamsb',
+    url: 'https://sbplay2.xyz/e/yp7u8ih6k9fn'
+  },
+  {
+    servicename: 'Xstreamcdn',
+    url: 'https://fembed-hd.com/v/mzvk6w8k1oq'
+  }, ...
+*/
+```
+
 
 
 
@@ -75,7 +100,7 @@ asa.getAnime("monoschinos2", "serial experiments").then(res => {
 ### Español 🇪🇸
 | Name | URL | Status | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| MonosChinos | https://monoschinos2.com/ | ✔ Working | Limited to 31 results per request. |
+| MonosChinos | https://monoschinos2.com/ | ✔ Working | Limited to 31 results per request. You can't retrieve streaming services _(at least not right now)_. |
 | AnimeFLV | https://ww3.animeflv.cc/ | ✔ Working | There's another URL for this site: https://www3.animeflv.net/. I'm not sure if the one used right now is official, but it's the only one I got working. |
 | JKAnime | https://jkanime.net/ | 🔘 Planned | |
 | VerAnime.org | https://www.veranime.org/ | 🔘 Planned | |
