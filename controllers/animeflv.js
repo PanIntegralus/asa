@@ -14,23 +14,25 @@ module.exports.getAnime = async function (inputsearch) {
         return response.data;
     }) .catch (function (error) {console.log(error)});
 
-    var $ = cheerio.load(body);
-    var animelist = []
-    $('ul.ListAnimes li').each(function(index) {
-        if (index == 30) {return false};
+    if (typeof body === 'string' || body instanceof String) {
+        var $ = cheerio.load(body);
+        var animelist = []
+        $('ul.ListAnimes li').each(function(index) {
+            if (index == 30) {return false};
 
-        title = $(this).children().children('a').children('h3.Title').text();
-        url = srcurl+$(this).children().children('a').attr('href');
-        img = $(this).children().children('a').children('div').children('figure').children('img').attr('src');
+            title = $(this).children().children('a').children('h3.Title').text();
+            url = srcurl+$(this).children().children('a').attr('href');
+            img = $(this).children().children('a').children('div').children('figure').children('img').attr('src');
 
-        var index = {
-            "title": title,
-            "url": url,
-            "img": img
-        };
-        animelist.push(index);
-    });
-    return animelist;
+            var index = {
+                "title": title,
+                "url": url,
+                "img": img
+            };
+            animelist.push(index);
+        });
+        return animelist;
+    } else {return [];}
 }
 
 module.exports.getEpisodes = async function(animeURL) {
