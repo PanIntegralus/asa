@@ -53,11 +53,10 @@ module.exports.getEpisodes = async function(animeURL) {
     });
 
     return episodeList.reverse();
+}
 
-    /* EVERYTHING COMMENTED HERE WILL BE PROPERLY IMPLEMENTED
-    IN THE FUTURE. IT WILL STAY HERE IN THE MEANTIME FOR REFERENCE. 
-
-    var body = await axios.get(srcurl+url.substring(url.lastIndexOf('/')))
+module.exports.getStreaming = async function(episodeURL) {
+    var body = await axios.get(episodeURL)
     .then (function (response) {
         return response.data;
     }) .catch (function (error) {console.log(error)});
@@ -76,8 +75,5 @@ module.exports.getEpisodes = async function(animeURL) {
             streamingList.push(index);
         }
     });
-    console.log(streamingList);
-
-    */
-
+    return streamingList;
 }

@@ -16,8 +16,15 @@ module.exports.getAnime = exports.getAnime = async function(source, inputsearch)
 
 module.exports.getEpisodes = exports.getEpisodes = async function(source, animeURL) {
     try {
-        
         return controllers[source].getEpisodes(animeURL).then(res =>{return res});
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+module.exports.getStreaming = exports.getStreaming = async function(source, episodeURL) {
+    try {
+        return controllers[source].getStreaming(episodeURL).then(res =>{return res});
     } catch (error) {
         console.log(error);
     }
