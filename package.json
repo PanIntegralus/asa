@@ -1,7 +1,7 @@
 {
   "name": "asa-api",
-  "version": "0.0.6",
-  "description": "An API to scrap information from anime websites.",
+  "version": "0.0.7",
+  "description": "An API to scrap information from anime websites",
   "main": "main.js",
   "scripts": {
     "start": "node main.js",

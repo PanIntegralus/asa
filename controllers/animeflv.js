@@ -14,21 +14,16 @@ module.exports.getAnime = async function (inputsearch) {
         return response.data;
     }) .catch (function (error) {console.log(error)});
 
-    var $ = cheerio.load(body);
-    var animelist = []
-
-    var result = function(){ if ($('ul.ListAnimes').children().length == 0) {
-        return {
-            "url": "404",
-        };
-    } else {
+    if (typeof body === 'string' || body instanceof String) {
+        var $ = cheerio.load(body);
+        var animelist = []
         $('ul.ListAnimes li').each(function(index) {
             if (index == 30) {return false};
-    
+
             title = $(this).children().children('a').children('h3.Title').text();
             url = srcurl+$(this).children().children('a').attr('href');
             img = $(this).children().children('a').children('div').children('figure').children('img').attr('src');
-    
+
             var index = {
                 "title": title,
                 "url": url,
@@ -37,11 +32,7 @@ module.exports.getAnime = async function (inputsearch) {
             animelist.push(index);
         });
         return animelist;
-    }}
-
-    return result();
-
-    
+    } else {return [];}
 }
 
 module.exports.getEpisodes = async function(animeURL) {
