@@ -5,7 +5,7 @@ const cheerio = require('cheerio').default;
 var srcurl = "https://hentaila.tv";
 
 module.exports.getAnime = async function (inputsearch) {
-    var body = await axios.get(srcurl+"/?s"+inputsearch, {
+    var body = await axios.get(srcurl+"/?s="+inputsearch, {
         headers: {
             'User-Agent': 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/5351 (KHTML, like Gecko) Chrome/40.0.852.0 Mobile Safari/5351',
         }
