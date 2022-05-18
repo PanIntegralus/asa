@@ -35,45 +35,45 @@ module.exports.getAnime = async function (inputsearch) {
     } else {return [];}
 }
 
-// module.exports.getEpisodes = async function(animeURL) {
-//     var body = await axios.get(animeURL)
-//     .then (function (response) {
-//         return response.data;
-//     }) .catch (function (error) {console.log(error)});
+module.exports.getEpisodes = async function(animeURL) {
+    var body = await axios.get(animeURL)
+    .then (function (response) {
+        return response.data;
+    }) .catch (function (error) {console.log(error)});
 
-//     var $ = cheerio.load(body);
+    var $ = cheerio.load(body);
     
-//     var episodeList = []
-//     $('ul#episodeList li').each(function (index) {
-//         url = srcurl+$(this).children('a').attr('href');
-//         var index = {
-//             "url": url
-//         };
-//         episodeList.push(index);
-//     });
+    var episodeList = []
+    $('div.hentai__episodes a').each(function (index) {
+        url = $(this).attr('href');
+        var index = {
+            "url": url
+        };
+        episodeList.push(index);
+    });
 
-//     return episodeList.reverse();
-// }
+    return episodeList.reverse();
+}
 
-// module.exports.getStreaming = async function(episodeURL) {
-//     var body = await axios.get(episodeURL)
-//     .then (function (response) {
-//         return response.data;
-//     }) .catch (function (error) {console.log(error)});
+module.exports.getStreaming = async function(episodeURL) {
+    var body = await axios.get(episodeURL)
+    .then (function (response) {
+        return response.data;
+    }) .catch (function (error) {console.log(error)});
 
-//     $ = cheerio.load(body);
+    $ = cheerio.load(body);
 
-//     var streamingList = []
-//     $('ul.CapiTnv li').each(function(index) {
-//         var data_video = $(this).attr('data-video');
-//         var servicename = $(this).attr('title');
-//         if (servicename=="Our Server") {} else {
-//             var index = {
-//                 "servicename": servicename,
-//                 "url": data_video
-//             };
-//             streamingList.push(index);
-//         }
-//     });
-//     return streamingList;
-// }
+    var streamingList = []
+    $('div.jw-wrapper video.jw-video').each(function(index) {
+        var data_video = $(this).attr('src');
+        var servicename = "Video Blob";
+        if (servicename=="Our Server") {} else {
+            var index = {
+                "servicename": servicename,
+                "url": data_video
+            };
+            streamingList.push(index);
+        }
+    });
+    return streamingList;
+}
