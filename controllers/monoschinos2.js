@@ -1,5 +1,8 @@
 const axios = require('axios');
 const cheerio = require('cheerio').default;
+const importModules = require('import-modules');
+
+const utils = importModules('../utils');
 
 var srcurl = "https://monoschinos2.com";
 

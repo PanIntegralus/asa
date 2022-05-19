@@ -2,8 +2,8 @@
 
 ASA (Anime Scraper API) is an API to scrap information from anime websites. This was made for another project, but now is entirely separated. However, **is not meant to use in production**. It was made just for fun.
 
-## THIS IS UNDER HEAVY DEVELOPMENT, DON'T USE THIS IN PRODUCTION
-### This means that **breaking changes will be made**, and you'll probably need to change stuff.
+## THE PROJECT IS BEING REWRITTEN FOR BETTER SUPPORT IN THE FUTURE
+### This means that **breaking changes will be made**, and you'll probably need to change stuff. **Don't use this module in production**.
 ---
 - [Features](#features)
 - [Installation](#installation)
@@ -100,10 +100,11 @@ asa.getAnime("animeflv", "serial experiments").then(res => {
 ### Español 🇪🇸
 | Name | URL | Status | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| MonosChinos | https://monoschinos2.com/ | ✔ Working | Limited to 31 results per request. You can't retrieve streaming services _(at least not right now)_. |
-| AnimeFLV | https://ww3.animeflv.cc/ | ✔ Working | There's another URL for this site: https://www3.animeflv.net/. I'm not sure if the one used right now is official, but it's the only one I got working. |
+| MonosChinos | https://monoschinos2.com/ | 🟡 Not fully functional | Limited to 31 results per request. You can't retrieve streaming services _(at least not right now)_. |
+| AnimeFLV | https://ww3.animeflv.cc/ | ✔ Fully working | There's another URL for this site: https://www3.animeflv.net/. I'm not sure if the one used right now is official, but it's the only one I got working. |
 | JKAnime | https://jkanime.net/ | 🔘 Planned | |
 | VerAnime.org | https://www.veranime.org/ | 🔘 Planned | |
+| Hentaila.tv | https://hentaila.tv | 🟡 Not fully functional | 🔞 +18 NSFW | 
 
 ### English 🇬🇧
 | Name | URL | Status | Notes |
