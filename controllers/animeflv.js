@@ -11,6 +11,10 @@ var options = {
     srcurl: srcurl,
     filter: filter,
     params: inputSearch,
+    firstElement: "ul.ListAnimes li",
+    titleElement: "h3.Title",
+    urlElement: "a",
+    imgElement: "div figure img",
 }
 
 
