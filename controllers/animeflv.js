@@ -6,13 +6,16 @@ var site = "animeflv";
 var srcurl = "https://ww3.animeflv.cc";
 var filter = "/browse?q=";
 
+var options = {
+    site: site,
+    srcurl: srcurl,
+    filter: filter,
+    params: inputSearch,
+}
+
+
 module.exports.getAnime = async function (inputSearch) {
-    var options = {
-        site: site,
-        srcurl: srcurl,
-        filter: filter,
-        params: inputSearch,
-    }
+    options.params = inputSearch;
     return await utils["scrap"].scrapAnime(options);
 }
 
